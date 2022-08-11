@@ -3,11 +3,12 @@
 }
 
 #q4Wrapper {
-  background-color: #2A3035;
+  background-color: #2a3035;
   font-family: "Roboto", sans-serif;
   color: white;
 }
-#q4Wrapper h1, #q4Wrapper h3 {
+#q4Wrapper h1,
+#q4Wrapper h3 {
   margin: 0;
 }
 #q4Wrapper h1 {
@@ -18,8 +19,9 @@
   line-height: 20px;
   text-transform: uppercase;
 }
-#q4Wrapper header, #q4Wrapper footer {
-  background-color: #22272B;
+#q4Wrapper header,
+#q4Wrapper footer {
+  background-color: #22272b;
 }
 #q4Wrapper header {
   padding: 20px;
@@ -60,5 +62,43 @@
 
 /* Begin styling the report items here! */
 .reports {
+  /* IE11 support */
+  display: flex;
+  flex-wrap: wrap;
+  -ms-flex-pack: justify;
+  -ms-box-pack: space-evenly;
 
+  /* Other browsers */
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 30px;
+}
+
+.reports_item {
+  margin-bottom: 30px;
+}
+
+/* Centering content in IE11 */
+@media only screen and (max-width: 835px) {
+  .reports {
+    -ms-flex-pack: center;
+    padding-left: 30px;
+  }
+  .reports_item {
+    margin-right: 30px;
+  }
+}
+
+/* Responsiveness in medium screens */
+@media only screen and (max-width: 768px) {
+  .reports {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Responsiveness in small screens */
+@media only screen and (max-width: 570px) {
+  .reports {
+    grid-template-columns: 1fr;
+  }
 }
